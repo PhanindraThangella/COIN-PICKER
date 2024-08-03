@@ -1,0 +1,119 @@
+body{
+    padding:0px;
+    margin:10px;
+    box-sizing: border-box;
+}
+.mainpage{
+    width:100%;
+    height:100%;
+}
+.Maintopdiv{
+    /* border:2px solid aqua; */
+    width:inherit;
+    height:30%;
+    display:flex;
+    flex-direction:row;
+}
+.Mainbottomdiv{
+    /* border:2px solid blue; */
+    width:inherit;
+    height:70%;
+}
+.sidenavforprevious{
+    /* border:2px solid blue; */
+    width:40%;
+    height:100%;
+}
+.mainnumbercontentdiv{
+    /* border:2px solid blue; */
+    width:40%;
+    height:100%;
+}
+.sidenavfornumberhistory{
+    /* border:2px solid blue; */
+    width:20%;
+    height:100%;
+}
+.presentnumberdiv{
+    height:60%;
+    margin:0px;
+    padding:0px;
+}
+.startornextbutton{
+    /* border:2px solid black; */
+    height:30%;
+}
+.presentnumbermain{
+    text-align:center;
+    font-size:80px;
+    margin:10px;
+}
+.sidenavforprevious h2{
+    padding-top:10px;
+    margin:20px 10px;
+}
+.previousnumber{
+    color:black;
+    font-size:70px;
+    font-weight:700;
+    opacity:0.3;
+    margin:0px 10px;
+}
+.Mainbottomdiv{
+    width:100%;
+    height:70%;
+    /* border:2px solid black; */
+}
+.Mainbottomdivsub{
+    width:320px;
+    height:350px;
+    display: grid;
+    grid-template-columns: 28px 28px 28px 28px 28px 28px 28px 28px 28px 28px;
+    grid-template-rows: 35px 35px 35px 35px 35px 35px 35px 35px 35px ;
+    gap: 4px;
+    background-color: #f321bf;
+    padding: 6px;
+    margin:20px 6px;
+}
+.Mainbottomdivsub > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    /* padding: 20px 0; */
+    font-size: 22px;
+}       
+.btn-grad {
+    background-image: linear-gradient(to right, #ff6e7f 0%, #bfe9ff  51%, #ff6e7f  100%);
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: black;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    font-size:18px;
+    font-weight:700;
+    height:40px;
+    width:120px;
+    margin:10px 5px;
+    border:none;
+}
+.btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+    cursor:pointer;
+}
+.logo{
+    font-size:37px;
+    font-weight:700;
+    margin:0px;
+}
+.logocap{
+    margin:0px;
+    padding:0px;
+    float:right;
+    font-size:20px; 
+    font-weight:700;
+    color:#0000ff;
+    font-family: "Lucida Handwriting", cursive;
+}

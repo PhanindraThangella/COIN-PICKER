@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title>Housie Coin Picker </title>
+        <link rel="stylesheet" href="maincss.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body onload="warnOnRefresh()">
+        <div class="mainpage">
+            <div class="Maintopdiv">
+                <div class="sidenavforprevious">
+                    <h2>Previous</h2>
+                    <p class="previousnumber"></p>
+                </div>
+                <div class="mainnumbercontentdiv">
+                    <div class="presentnumberdiv">
+                        <h1 class="presentnumbermain" id="presentnumbermain">--</h1>
+                    </div>
+                    <div class="startornextbutton">
+                        <button type="button" class="btn-grad" onclick="getNumber()" id="startornext">START</button>
+                    </div>
+                </div>
+                <div class="sidenavfornumberhistory"></div>
+            </div>
+            <div class="Mainbottomdiv" id="Mainbottomdiv">
+                <div class="Mainbottomdivsub" id="Mainbottomdivsub"></div>
+                <h1 class="logo">STREET ROWDIES</h1>
+                    <p class="logocap">COIN PICKER</p>
+            </div>
+        </div>
+        <script>
+            const griddiv=document.getElementById('Mainbottomdivsub');
+            for (let i = 1; i <= 90; i++) {
+                const div = document.createElement('div');
+                div.className = `div${i}`;
+                div.textContent = i;
+                griddiv.appendChild(div);
+            }
+            var flag="START";
+            const numbers=[];
+            const completedNumbers=[];
+            completedNumbers.push(0);
+            for(let i=1;i<=90;i++)
+            {
+                numbers.push(i);
+            }
+            function getNumber()
+            {
+                if(numbers.length==0)
+                {
+                    document.getElementById('presentnumbermain').innerHTML=`X`;
+                    document.getElementById('presentnumbermain').style.color='red';
+                }
+                else{
+                    if(flag==="START")
+                    {
+                        document.getElementById('startornext').innerHTML="NEXT";
+                        flag="NEXT";
+                    }
+                    let x = Math.ceil(Math.random() * numbers.length);
+                    let selectedNum=numbers[x-1];
+                    document.getElementById('presentnumbermain').innerHTML=`${selectedNum}`;
+                    numbers.splice(x-1,1);
+                    completedNumbers.push(selectedNum);
+                    const mainDiv = document.getElementsByClassName('Mainbottomdivsub')[0];
+                    const targetDiv = mainDiv.getElementsByClassName(`div${selectedNum}`)[0];
+                    targetDiv.style.backgroundColor = 'green';
+                    updatePreviousNumber();
+                }
+            }
+            function  updatePreviousNumber()
+            {
+                const prevdiv=document.getElementsByClassName('previousnumber')[0];
+                if(completedNumbers.length>2)
+                {
+                    let prevnum=completedNumbers[completedNumbers.length-2];
+                    prevdiv.innerHTML=`${prevnum}`;
+                }
+            }
+            function warnOnRefresh()
+            {
+                window.addEventListener('beforeunload',function(e){
+                    e.preventDefault();
+                    e.returnValue='';
+                });
+            }
+        </script>
+    </body>
+</html> 
